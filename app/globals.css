@@ -1,0 +1,58 @@
+@import "tailwindcss";
+/* Pretendard is loaded via <link rel="stylesheet"> in app/layout.tsx so the @import
+   precedes all rules (a later @import after Tailwind's expanded output would be
+   rejected by Turbopack and silently dropped by next build). */
+
+:root {
+  --background: #ffffff;
+  --foreground: #15173d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Brand */
+  --color-brand-ink: #15173d;
+  --color-brand-pink: #e8175d;
+  --color-brand-pill: #e28ca9;
+  --color-brand-blush: #f1e9e9;
+
+  /* Cool Gray (cool neutrals from Figma) */
+  --color-cool-50: #f9f9fb;
+  --color-cool-100: #eff1f5;
+  --color-cool-200: #dcdfea;
+  --color-cool-300: #b9c0d4;
+  --color-cool-400: #7d89b0;
+
+  /* Gray Iron (warm neutrals from Figma) */
+  --color-iron-50: #fafafa;
+  --color-iron-200: #e4e4e7;
+  --color-iron-300: #d1d1d6;
+  --color-iron-400: #a0a0ab;
+  --color-iron-500: #70707b;
+  --color-iron-600: #51525c;
+  --color-iron-700: #3f3f46;
+  --color-iron-800: #292a2f;
+  --color-iron-900: #18181b;
+  --color-iron-950: #131316;
+
+  --font-sans:
+    "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",
+    sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss03", "ss06", "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
