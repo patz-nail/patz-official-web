@@ -1,0 +1,127 @@
+{
+  "1503:8931": {
+    "label": "Apple logo (hero CTA)",
+    "assets": ["c630a14f018d2380e36ef3a0af8b8ca04b9205d2.svg"]
+  },
+  "1469:3157": {
+    "label": "Scroll-down chevron",
+    "assets": ["c83f86eb6de2bc1f620afe9b92faf7e6ed3dc6ee.svg"]
+  },
+  "1503:9021": {
+    "label": "FAQ plus icon",
+    "assets": ["7a69a4e50809aac095a45bbfa72db4dbf191e381.svg"]
+  },
+  "1481:3385": {
+    "label": "Check icon (Features bullets)",
+    "assets": ["4d00d69f14c62f7ca9e0f26abbd43f6447ac402f.svg"]
+  },
+  "1469:3127": {
+    "label": "Small patz logo (nav)",
+    "assets": [
+      "de11ddbbf13725a2f3fa24760966b4c205b0789b.svg",
+      "42746f3ec899b01a186018d979c0470b479ca2e1.svg"
+    ],
+    "note": "Two parts: droplet glyph (Vector) and wordmark (Frame)."
+  },
+  "1502:3661": {
+    "label": "Footer patz logo",
+    "assets": ["5df121fe8617a9697745c9bcbcf507b32ec4347b.svg"]
+  },
+  "1481:3334": {
+    "label": "Large stylized PATZ wordmark (PainPoints)",
+    "assets": ["05ba2e4b4425aefa556926634448c832b71828c8.svg"],
+    "note": "Figma exported the entire wordmark (all droplet/Vector children) as a single combined SVG."
+  },
+  "1469:3152": {
+    "label": "Hero background blobs container",
+    "assets": ["84129e3b4180b92351b2ad1dc6227f70ae4827a6.svg"],
+    "note": "Figma exported all 4 vector children as a single combined SVG."
+  },
+  "1481:3292": {
+    "label": "Problem-section big ellipse",
+    "assets": ["caa7230ce4fc5c89c6b078aa1569316d58154977.svg"]
+  },
+  "1481:3197": {
+    "label": "PainPoints big ellipse (560x560)",
+    "assets": ["fc36dbf2159cfbf0a4c2176ee13ff9864139258b.svg"]
+  },
+  "1481:3588": {
+    "label": "FAQ blobs group",
+    "assets": ["0e41397b5147cb2166c149ca22e9674cb4ba9340.svg"],
+    "note": "Figma exported all blob children as a single combined SVG."
+  },
+  "1502:3628": {
+    "label": "Final CTA blobs group",
+    "assets": ["c6e3228381181a8f9aa24916a92f4d8a0be6c6d1.svg"],
+    "note": "Figma exported all blob children as a single combined SVG."
+  },
+  "1481:3365": {
+    "label": "Feature 1 Onboarding iPhone",
+    "assets": [
+      "e83714dfa5bab56d01568bac09c145c2201a87da.png",
+      "9a13421efcecf23aa06e81ad777ac0c96cd39d08.png",
+      "9d77be3f2640eae14e306f9ef7ab95ea7c90ec9d.png"
+    ]
+  },
+  "1481:3396": {
+    "label": "Feature 2 Home iPhone",
+    "assets": [
+      "c0a7f96e4befae39f270c18004057d223e0f7a08.png",
+      "9a13421efcecf23aa06e81ad777ac0c96cd39d08.png",
+      "9d77be3f2640eae14e306f9ef7ab95ea7c90ec9d.png"
+    ]
+  },
+  "1503:9048": {
+    "label": "Feature 3 Search iPhone",
+    "assets": [
+      "c91bad2fa891de76310a2996161a44ccb73692bc.png",
+      "9a13421efcecf23aa06e81ad777ac0c96cd39d08.png",
+      "9d77be3f2640eae14e306f9ef7ab95ea7c90ec9d.png"
+    ]
+  },
+  "1503:9068": {
+    "label": "Feature 4 Location iPhone",
+    "assets": [
+      "ad9188e439ef0c61f80e935b96eeab19f0127274.png",
+      "9a13421efcecf23aa06e81ad777ac0c96cd39d08.png",
+      "9d77be3f2640eae14e306f9ef7ab95ea7c90ec9d.png"
+    ]
+  },
+  "1481:3503": {
+    "label": "Feature 5 Community iPhone",
+    "assets": [
+      "e83714dfa5bab56d01568bac09c145c2201a87da.png",
+      "5bdb0ce623c74df6a4723b5e792bb01ca04cd30c.png",
+      "9a13421efcecf23aa06e81ad777ac0c96cd39d08.png",
+      "9d77be3f2640eae14e306f9ef7ab95ea7c90ec9d.png"
+    ],
+    "note": "Two screen layers stacked (IMG_8919 base + overlay), then phone chrome, then camera."
+  },
+  "1481:3464": {
+    "label": "PainPoints big iPhone (back, larger)",
+    "assets": [
+      "1f907c727f33d5604a8e47e591f8ed0012f8bfbe.png",
+      "9dae48f068408893f9bd0644bcfc761ea1e230fb.png",
+      "bd1282673e8d54e7c624a93b3b52e3c4293fb362.png",
+      "80a14c9f52232ff860d2014c687d3e473bb452ba.png",
+      "e76620dc3cde82c9c7d12b8c797f522ac8f72d80.svg"
+    ],
+    "note": "Non-standard composite: order is screen content (IMG_8919 mask source img1, mask shape img), chrome color layer (change color here), display-frame, then 'fix' SVG mask. Camera dot is part of display-frame here."
+  },
+  "1481:3455": {
+    "label": "PainPoints small iPhone (front, tilted)",
+    "assets": [
+      "3db85d9b10bab10c507879bb900bc40b83415219.png",
+      "02c6f39cc6d5249bd16f65f2da87c435bde20659.png",
+      "4d935aab6cf75f4c23f53ab8ed2f29fba2919240.png",
+      "10be8110865394191da0a1a0acbe7fb243194e56.png",
+      "366635521eb39eb439af0123c527c74025782dfb.svg",
+      "0bb05fba2cadf43dfdcbeb6a9618d9b18049fe1d.svg"
+    ],
+    "note": "Non-standard tilted composite: order is screen content (img1), screen mask shape (img), chrome color layer, display-frame, then two 'fix' SVG masks (366... is outer rotated phone silhouette, 0bb... is inner)."
+  },
+  "1481:3271": {
+    "label": "Nail photo (PainPoints left column)",
+    "assets": ["836e3f387ed4d41d10aedcb09f35f8b201330805.png"]
+  }
+}

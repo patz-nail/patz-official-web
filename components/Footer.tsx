@@ -1,4 +1,5 @@
 // Brief: briefs/04-faq-cta-footer.md
+import { LOGO_FOOTER } from "@/lib/figma-assets";
 
 const NAV_LINKS: { label: string; href: string }[] = [
   { label: "서비스", href: "#service" },
@@ -15,9 +16,11 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-10 md:gap-0">
         {/* Left column */}
         <div className="flex flex-col">
-          <p className="text-brand-pink text-[32px] md:text-[40px] font-black leading-none tracking-[-0.02em]">
-            patz
-          </p>
+          <img
+            src={LOGO_FOOTER}
+            alt="patz"
+            className="h-10 md:h-[51px] w-auto"
+          />
           <p className="text-[13px] md:text-[14px] text-iron-500 mt-3 md:mt-4 max-w-full md:max-w-[420px] leading-[1.6]">
             네일 취향 검색은 파츠에게. 감별된 이미지로 꼭 맞는 취향을 찾고, 내
             주변 네일샵까지 한 번에.

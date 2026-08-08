@@ -1,5 +1,14 @@
 // Brief: briefs/03-features.md
 import type { ReactNode } from "react";
+import PhoneMockup from "@/components/PhoneMockup";
+import {
+  ICON_CHECK,
+  SCREEN_COMMUNITY_OVERLAY,
+  SCREEN_HOME,
+  SCREEN_LOCATION,
+  SCREEN_ONBOARDING,
+  SCREEN_SEARCH,
+} from "@/lib/figma-assets";
 
 type Bullet = string;
 
@@ -10,8 +19,9 @@ type Block = {
   body: ReactNode;
   bullets: [Bullet, Bullet];
   phoneFirst: boolean;
-  phoneEmoji: string;
-  gap: number; // gap between phone and copy
+  screen: string;
+  overlay?: string;
+  gap: number;
 };
 
 const BLOCKS: Block[] = [
@@ -31,7 +41,7 @@ const BLOCKS: Block[] = [
       "위치 허용 시 더 정밀한 지역 기반 추천",
     ],
     phoneFirst: true,
-    phoneEmoji: "💅",
+    screen: SCREEN_ONBOARDING,
     gap: 180,
   },
   {
@@ -53,7 +63,7 @@ const BLOCKS: Block[] = [
     ),
     bullets: ["취향 기반 맞춤 디자인 추천", "매주 업데이트되는 이번 주 PICK"],
     phoneFirst: false,
-    phoneEmoji: "🏠",
+    screen: SCREEN_HOME,
     gap: 180,
   },
   {
@@ -75,7 +85,7 @@ const BLOCKS: Block[] = [
     ),
     bullets: ["젤네일·프렌치·마블·오로라 등 세부 필터", "추천순&인기순으로 정렬"],
     phoneFirst: true,
-    phoneEmoji: "🔍",
+    screen: SCREEN_SEARCH,
     gap: 150,
   },
   {
@@ -97,7 +107,7 @@ const BLOCKS: Block[] = [
     ),
     bullets: ["위치 기반 거리순 정렬", "샵별 디자인 및 영업 정보를 한눈에"],
     phoneFirst: false,
-    phoneEmoji: "📍",
+    screen: SCREEN_LOCATION,
     gap: 180,
   },
   {
@@ -113,50 +123,20 @@ const BLOCKS: Block[] = [
     ),
     bullets: ["카테고리별 피드로 빠르게 탐색", "연습 모델 모집 및 후기 공유"],
     phoneFirst: true,
-    phoneEmoji: "💬",
+    screen: SCREEN_ONBOARDING,
+    overlay: SCREEN_COMMUNITY_OVERLAY,
     gap: 150,
   },
 ];
 
-function PhoneMockup({ emoji }: { emoji: string }) {
-  return (
-    <div
-      className="relative w-[280px] h-[570px] md:w-[400px] md:h-[815px] shrink-0"
-      aria-hidden="true"
-    >
-      {/* Phone frame */}
-      <div className="absolute inset-0 rounded-[34px] md:rounded-[48px] bg-iron-900" />
-
-      {/* Inner screen */}
-      <div className="absolute left-[13px] top-[11px] right-[13px] bottom-[11px] rounded-[36px] md:left-[18.67px] md:top-[15.33px] md:right-[18.67px] md:bottom-[15.33px] md:rounded-[50px] bg-iron-300 overflow-hidden flex items-center justify-center">
-        <span className="text-[84px] md:text-[120px] opacity-70 select-none">{emoji}</span>
-      </div>
-
-      {/* Dynamic island */}
-      <div className="absolute top-[18px] md:top-[26px] left-1/2 -translate-x-1/2 w-[82px] md:w-[116px] h-[23px] md:h-[33px] rounded-full bg-iron-900" />
-    </div>
-  );
-}
-
 function CheckIcon() {
   return (
-    <svg
-      width="28"
-      height="22"
-      viewBox="0 0 56 44"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+    <img
+      src={ICON_CHECK}
+      alt=""
       aria-hidden="true"
-      className="shrink-0 md:w-[56px] md:h-[44px] mt-1 md:mt-0"
-    >
-      <path
-        d="M8 22L22 36L48 8"
-        stroke="#e8175d"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+      className="shrink-0 h-[22px] w-[28px] md:h-[44px] md:w-[56px] mt-1 md:mt-0"
+    />
   );
 }
 
@@ -204,7 +184,13 @@ function CopyColumn({ block }: { block: Block }) {
 }
 
 function FeatureBlock({ block }: { block: Block }) {
-  const phone = <PhoneMockup emoji={block.phoneEmoji} />;
+  const phone = (
+    <PhoneMockup
+      screen={block.screen}
+      overlay={block.overlay}
+      className="w-[280px] md:w-[400px] shrink-0"
+    />
+  );
   const copy = <CopyColumn block={block} />;
   const mdGapClass = block.gap === 150 ? "md:gap-[150px]" : "md:gap-[180px]";
 

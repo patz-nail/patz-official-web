@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import { BLOB_FAQ, ICON_PLUS } from "@/lib/figma-assets";
 
 type FaqItem = {
   q: string;
@@ -43,39 +44,13 @@ export default function Faq() {
       id="support"
       className="max-w-[1440px] mx-auto py-[64px] md:py-[120px] px-5 md:px-0 relative overflow-hidden"
     >
-      {/* Decorative blush blobs */}
-      <svg
+      {/* Decorative blob composition from Figma */}
+      <img
+        src={BLOB_FAQ}
+        alt=""
         aria-hidden="true"
-        className="hidden md:block absolute -left-[60px] top-[60px] w-[280px] h-[280px] opacity-60 blur-[40px]"
-        viewBox="0 0 280 280"
-        fill="none"
-      >
-        <ellipse cx="140" cy="140" rx="140" ry="140" fill="#f1e9e9" />
-      </svg>
-      <svg
-        aria-hidden="true"
-        className="hidden md:block absolute right-[80px] top-[20px] w-[200px] h-[200px] opacity-60 blur-[40px]"
-        viewBox="0 0 200 200"
-        fill="none"
-      >
-        <ellipse cx="100" cy="100" rx="100" ry="100" fill="#f1e9e9" />
-      </svg>
-      <svg
-        aria-hidden="true"
-        className="hidden md:block absolute left-[100px] top-[480px] w-[120px] h-[120px] opacity-60 blur-[40px]"
-        viewBox="0 0 120 120"
-        fill="none"
-      >
-        <ellipse cx="60" cy="60" rx="60" ry="60" fill="#f1e9e9" />
-      </svg>
-      <svg
-        aria-hidden="true"
-        className="hidden md:block absolute right-[40px] top-[560px] w-[240px] h-[240px] opacity-60 blur-[40px]"
-        viewBox="0 0 240 240"
-        fill="none"
-      >
-        <ellipse cx="120" cy="120" rx="120" ry="120" fill="#f1e9e9" />
-      </svg>
+        className="hidden md:block pointer-events-none absolute inset-x-0 top-0 w-full h-auto opacity-70"
+      />
 
       {/* Header */}
       <div className="relative max-w-[800px] mx-auto text-center px-4 md:px-0">
@@ -112,23 +87,11 @@ export default function Faq() {
                   </span>
                   <span
                     aria-hidden="true"
-                    className={`relative inline-flex items-center justify-center w-6 h-6 shrink-0 text-brand-ink transition-transform duration-200 motion-reduce:transition-none ${
+                    className={`relative inline-flex items-center justify-center w-6 h-6 shrink-0 transition-transform duration-200 motion-reduce:transition-none ${
                       isOpen ? "rotate-45" : "rotate-0"
                     }`}
                   >
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <line x1="12" y1="5" x2="12" y2="19" />
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                    </svg>
+                    <img src={ICON_PLUS} alt="" aria-hidden="true" className="h-6 w-6" />
                   </span>
                 </button>
               </h3>

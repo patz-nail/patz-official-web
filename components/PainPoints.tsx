@@ -1,4 +1,12 @@
 // Brief: briefs/02-problem-painpoints.md
+import PhoneMockup from "@/components/PhoneMockup";
+import {
+  ELLIPSE_PAINPOINTS,
+  LOGO_PAINPOINTS_LARGE,
+  PHOTO_NAIL,
+  SCREEN_PAINPOINTS_BACK,
+  SCREEN_PAINPOINTS_FRONT,
+} from "@/lib/figma-assets";
 
 type QuotePillProps = {
   children: React.ReactNode;
@@ -46,10 +54,12 @@ export default function PainPoints() {
 
         {/* Two-column: nail photo placeholder + speech-bubble quotes */}
         <div className="relative left-0 top-0 flex flex-col items-stretch gap-6 md:absolute md:left-[74px] md:top-[398px] md:flex-row md:items-start md:gap-[8px]">
-          {/* Nail photo placeholder */}
-          <div
-            className="aspect-square w-full shrink-0 overflow-hidden bg-iron-200 md:size-[259px]"
+          {/* Nail photo (Figma asset) */}
+          <img
+            src={PHOTO_NAIL}
+            alt=""
             aria-hidden="true"
+            className="aspect-square w-full shrink-0 object-cover md:size-[259px]"
           />
 
           {/* Speech-bubble quotes */}
@@ -63,10 +73,12 @@ export default function PainPoints() {
           </ul>
         </div>
 
-        {/* Decorative background blob behind right callout column */}
-        <div
+        {/* Decorative ellipse behind right callout column (Figma asset) */}
+        <img
+          src={ELLIPSE_PAINPOINTS}
+          alt=""
           aria-hidden="true"
-          className="hidden md:absolute md:left-[846px] md:top-[338px] md:block md:size-[560px] md:rounded-full md:bg-brand-pill/15 md:blur-2xl"
+          className="hidden md:absolute md:left-[846px] md:top-[338px] md:block md:size-[560px] md:opacity-90"
         />
 
         {/* Right callout labels with pink pill highlights */}
@@ -115,34 +127,28 @@ export default function PainPoints() {
 
         {/* PATZ wordmark + decorative droplets */}
         <div className="relative left-0 top-0 flex translate-x-0 flex-col items-center gap-6 md:absolute md:left-1/2 md:top-[1572px] md:-translate-x-1/2 md:gap-[40px]">
-          <div
-            className="relative mr-2 flex h-[100px] w-full items-center justify-center md:h-[187px] md:w-[582px]"
-            aria-label="patz"
-          >
-            {/* Decorative droplet glyphs (left of wordmark) */}
-            <div
-              className="relative -mr-4 h-[80px] w-[90px] md:h-[160px] md:w-[140px]"
-              aria-hidden="true"
-            >
-              <span className="absolute left-0 top-3 block size-[60px] rounded-full bg-brand-pink/85 md:top-6 md:size-[110px]" />
-              <span className="absolute left-[35px] top-0 block h-[65px] w-[40px] rounded-full bg-brand-pill/80 md:left-[70px] md:h-[120px] md:w-[70px]" />
-            </div>
-            <span className="text-[80px] font-black leading-none tracking-[-0.06em] text-brand-ink md:text-[160px]">
-              patz
-            </span>
-          </div>
+          {/* Large stylized PATZ wordmark with droplet glyphs (Figma asset) */}
+          <img
+            src={LOGO_PAINPOINTS_LARGE}
+            alt="patz"
+            className="h-auto w-[60%] max-w-[400px] md:w-[582px] md:max-w-none"
+          />
 
-          {/* iPhone mockups — stylized rounded rect placeholders */}
+          {/* iPhone mockups — back/larger centered + front/smaller tilted */}
           <div
             className="relative h-[420px] w-full max-w-[360px] overflow-visible md:h-[597px] md:w-[1000px] md:max-w-none"
             aria-hidden="true"
           >
-            {/* Back / larger frame */}
-            <div className="absolute left-1/2 top-[20px] h-[400px] w-[600px] -translate-x-1/2 md:top-[34px] md:h-[563px] md:w-[1000px]">
-              <div className="mx-auto h-full w-[180px] rounded-[28px] bg-brand-ink shadow-[0_20px_40px_-15px_rgba(21,23,61,0.3)] md:w-[292px] md:rounded-[48px] md:shadow-[0_30px_60px_-15px_rgba(21,23,61,0.35)]" />
-            </div>
-            {/* Front / smaller frame, tilted */}
-            <div className="absolute left-[60%] top-[40px] h-[300px] w-[160px] rotate-[8deg] rounded-[24px] bg-brand-ink shadow-[0_15px_30px_-12px_rgba(21,23,61,0.4)] md:left-[525px] md:top-[26px] md:h-[450px] md:w-[250px] md:rounded-[42px] md:shadow-[0_25px_50px_-12px_rgba(21,23,61,0.4)]" />
+            {/* Back / larger phone — centered */}
+            <PhoneMockup
+              screen={SCREEN_PAINPOINTS_BACK}
+              className="absolute left-1/2 top-0 w-[180px] -translate-x-1/2 md:top-[10px] md:w-[280px]"
+            />
+            {/* Front / smaller phone — tilted */}
+            <PhoneMockup
+              screen={SCREEN_PAINPOINTS_FRONT}
+              className="absolute left-[58%] top-[20px] w-[150px] rotate-[8deg] md:left-[525px] md:top-[20px] md:w-[245px]"
+            />
           </div>
         </div>
       </div>
