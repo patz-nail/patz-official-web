@@ -7,6 +7,7 @@ import {
   LOGO_NAV_DROPLET,
   LOGO_NAV_WORDMARK,
 } from "@/lib/figma-assets";
+import { APP_STORE_URL } from "@/lib/constants";
 
 const NAV_LINKS: { label: string; href: string }[] = [
   { label: "서비스", href: "#service" },
@@ -69,7 +70,9 @@ export default function Nav() {
         <div className="flex items-center gap-2">
           {/* CTA (desktop) — white pill, dark label, dark (unfiltered) apple glyph */}
           <a
-            href="#"
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden h-10 items-center justify-center gap-[6px] rounded-[19px] bg-white px-6 text-brand-ink md:flex"
           >
             <img
@@ -126,7 +129,9 @@ export default function Nav() {
             ))}
             <li className="mt-2">
               <a
-                href="#"
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-white text-brand-ink"
               >

@@ -1,5 +1,6 @@
 // Brief: briefs/04-faq-cta-footer.md
 import { BLOB_FINAL_CTA, ICON_APPLE } from "@/lib/figma-assets";
+import { APP_STORE_URL } from "@/lib/constants";
 
 export default function FinalCta() {
   return (
@@ -32,7 +33,9 @@ export default function FinalCta() {
 
       <div className="relative mt-[40px] flex justify-center px-5 md:mt-14 md:px-0">
         <a
-          href="#"
+          href={APP_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex w-full max-w-[320px] items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-brand-ink transition-opacity hover:opacity-90 md:w-auto md:max-w-none md:gap-1"
         >
           <img

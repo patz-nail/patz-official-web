@@ -4,6 +4,7 @@ import {
   ICON_APPLE,
   ICON_SCROLL_DOWN,
 } from "@/lib/figma-assets";
+import { APP_STORE_URL } from "@/lib/constants";
 
 export default function Hero() {
   return (
@@ -45,7 +46,9 @@ export default function Hero() {
 
           {/* CTA — white pill, dark label, dark (unfiltered) apple glyph */}
           <a
-            href="#"
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex w-full max-w-[320px] items-center justify-center gap-3 rounded-full bg-white px-6 py-4 text-brand-ink md:w-auto md:max-w-none md:gap-1 md:px-6 md:py-4"
           >
             <img
