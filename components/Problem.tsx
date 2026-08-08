@@ -70,7 +70,7 @@ export default function Problem() {
             >
               <span>
                 네이버에서{" "}
-                <span className="font-bold text-iron-950">‘네일’</span> 검색
+                <span className="font-bold text-iron-950">‘네일&#39;</span> 검색
               </span>
             </StepPill>
           </li>

@@ -28,24 +28,24 @@ export default function Nav() {
   }, [open]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-14 md:h-16 w-full bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <div className="mx-auto flex h-14 md:h-16 w-full max-w-[1440px] items-center justify-between px-5 md:px-[97px]">
-        {/* Logo (Figma assets: droplet glyph + wordmark) */}
+    <header className="fixed top-0 left-0 right-0 z-50 h-14 md:h-16 w-full border-b border-white/10 bg-brand-ink/70 backdrop-blur-md supports-[backdrop-filter]:bg-brand-ink/60">
+      <div className="mx-auto flex h-14 md:h-16 w-full max-w-[1440px] items-center justify-between px-5 md:px-[120px]">
+        {/* Logo (Figma assets: droplet glyph + wordmark — wordmark is #F1E9E9, reads on dark) */}
         <a
           href="#hero"
-          className="flex items-center gap-1.5"
+          className="flex items-center gap-[4px]"
           aria-label="patz home"
         >
           <img
             src={LOGO_NAV_DROPLET}
             alt=""
             aria-hidden="true"
-            className="h-6 w-auto md:h-[30px]"
+            className="h-6 w-[29px] md:h-[30px] md:w-[36px]"
           />
           <img
             src={LOGO_NAV_WORDMARK}
             alt="patz"
-            className="h-3 w-auto md:h-4"
+            className="h-3 w-[38px] md:h-4 md:w-[51px]"
           />
         </a>
 
@@ -56,7 +56,7 @@ export default function Nav() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="text-[15px] font-medium text-iron-700 transition-colors hover:text-brand-ink"
+                  className="text-[22px] font-normal tracking-[-0.15px] text-white transition-colors hover:text-white/70"
                 >
                   {link.label}
                 </a>
@@ -67,18 +67,20 @@ export default function Nav() {
 
         {/* Right-side group: CTA + hamburger */}
         <div className="flex items-center gap-2">
-          {/* CTA (desktop) */}
+          {/* CTA (desktop) — white pill, dark label, dark (unfiltered) apple glyph */}
           <a
             href="#"
-            className="hidden md:flex h-10 w-[169px] items-center justify-center gap-2 rounded-full bg-brand-ink text-white"
+            className="hidden h-10 items-center justify-center gap-[6px] rounded-[19px] bg-white px-6 text-brand-ink md:flex"
           >
             <img
               src={ICON_APPLE}
               alt=""
               aria-hidden="true"
-              className="h-[18px] w-[15px] [filter:invert(1)_brightness(2)]"
+              className="h-[22px] w-[18px]"
             />
-            <span className="text-[14px] font-medium">파츠 다운로드</span>
+            <span className="text-[18px] font-semibold tracking-[-0.194px]">
+              파츠 다운로드
+            </span>
           </a>
 
           {/* Hamburger (mobile only) */}
@@ -88,7 +90,7 @@ export default function Nav() {
             aria-expanded={open}
             aria-controls="mobile-nav-panel"
             onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center text-iron-700 md:hidden"
+            className="flex h-10 w-10 items-center justify-center text-white md:hidden"
           >
             {open ? (
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
@@ -107,7 +109,7 @@ export default function Nav() {
       <div
         id="mobile-nav-panel"
         hidden={!open}
-        className="md:hidden border-t border-iron-200 bg-white"
+        className="border-t border-white/10 bg-brand-ink md:hidden"
       >
         <nav aria-label="모바일 메뉴" className="px-5 py-4">
           <ul className="flex flex-col gap-1">
@@ -116,7 +118,7 @@ export default function Nav() {
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block py-3 text-[16px] font-medium text-iron-700"
+                  className="block py-3 text-[16px] font-medium text-white"
                 >
                   {link.label}
                 </a>
@@ -126,13 +128,13 @@ export default function Nav() {
               <a
                 href="#"
                 onClick={() => setOpen(false)}
-                className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-brand-ink text-white"
+                className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-white text-brand-ink"
               >
                 <img
                   src={ICON_APPLE}
                   alt=""
                   aria-hidden="true"
-                  className="h-[18px] w-[15px] [filter:invert(1)_brightness(2)]"
+                  className="h-[18px] w-[15px]"
                 />
                 <span className="text-[15px] font-semibold">파츠 다운로드</span>
               </a>

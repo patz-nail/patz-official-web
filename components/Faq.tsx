@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import { BLOB_FAQ, ICON_PLUS } from "@/lib/figma-assets";
+import { BLOB_FAQ } from "@/lib/figma-assets";
 
 type FaqItem = {
   q: string;
@@ -42,37 +42,40 @@ export default function Faq() {
   return (
     <section
       id="support"
-      className="max-w-[1440px] mx-auto py-[64px] md:py-[120px] px-5 md:px-0 relative overflow-hidden"
+      className="relative mx-auto max-w-[1440px] overflow-hidden px-5 py-[64px] md:px-0 md:py-[120px]"
     >
-      {/* Decorative blob composition from Figma */}
+      {/* Decorative blob composition from Figma (bleeds slightly off the left edge) */}
       <img
         src={BLOB_FAQ}
         alt=""
         aria-hidden="true"
-        className="hidden md:block pointer-events-none absolute inset-x-0 top-0 w-full h-auto opacity-70"
+        className="pointer-events-none absolute inset-x-0 top-0 hidden aspect-[1425/977] w-full md:block md:-left-[65px] md:right-auto md:top-[26px] md:w-[1425px]"
       />
 
       {/* Header */}
-      <div className="relative max-w-[800px] mx-auto text-center px-4 md:px-0">
-        <p className="text-[36px] md:text-[64px] font-bold text-brand-pink text-center leading-[1.1]">
+      <div className="relative mx-auto max-w-[552px] px-4 text-center md:px-0">
+        <p className="text-center text-[32px] font-bold leading-[1.1] text-brand-pink md:text-[44px] md:leading-[70px] md:tracking-[2px]">
           FAQ
         </p>
-        <h2 className="text-[28px] md:text-[48px] font-bold text-brand-ink text-center mt-4 md:mt-6 leading-[1.2]">
+        <h2 className="mt-2 text-center text-[28px] font-bold leading-[1.2] text-iron-900 md:mt-[30px] md:text-[44px] md:leading-[70px] md:tracking-[2px]">
           자주 묻는 질문
         </h2>
-        <p className="text-[15px] md:text-[20px] font-light text-iron-600 text-center mt-3 md:mt-4 leading-[1.5]">
+        <p className="mt-3 text-center text-[15px] font-light leading-[1.5] text-iron-800 md:mt-4 md:text-[24px] md:tracking-[-1px]">
           파츠에 대해 가장 많이 궁금해하시는 내용을 모았어요.
         </p>
       </div>
 
-      {/* Accordion */}
-      <div className="relative max-w-[800px] mx-auto mt-[56px] md:mt-[120px]">
+      {/* Accordion — stacked white cards */}
+      <div className="relative mx-auto mt-[40px] flex max-w-[800px] flex-col gap-3 md:mt-12 md:gap-6">
         {ITEMS.map((item, idx) => {
           const isOpen = openIndex === idx;
           const panelId = `faq-panel-${idx}`;
           const buttonId = `faq-button-${idx}`;
           return (
-            <div key={idx} className="border-b border-iron-200">
+            <div
+              key={idx}
+              className="overflow-hidden rounded-2xl border border-iron-300 bg-white md:rounded-[20px]"
+            >
               <h3>
                 <button
                   type="button"
@@ -80,18 +83,27 @@ export default function Faq() {
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full flex items-center justify-between gap-4 py-5 md:py-8 px-3 md:px-8 text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink focus-visible:ring-offset-2 rounded-sm"
+                  className="flex w-full cursor-pointer items-center justify-between gap-4 rounded-sm px-4 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink focus-visible:ring-offset-2 md:px-9"
                 >
-                  <span className="text-[16px] md:text-[24px] font-semibold text-brand-ink tracking-[-0.3px] md:tracking-[-0.5px]">
+                  <span className="text-[16px] font-semibold tracking-[-0.3px] text-iron-900 md:text-[24px] md:tracking-[-1px]">
                     {item.q}
                   </span>
                   <span
                     aria-hidden="true"
-                    className={`relative inline-flex items-center justify-center w-6 h-6 shrink-0 transition-transform duration-200 motion-reduce:transition-none ${
+                    className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-pink/15 text-brand-pink transition-transform duration-200 motion-reduce:transition-none md:h-[42px] md:w-[42px] ${
                       isOpen ? "rotate-45" : "rotate-0"
                     }`}
                   >
-                    <img src={ICON_PLUS} alt="" aria-hidden="true" className="h-6 w-6" />
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      className="h-5 w-5 md:h-6 md:w-6"
+                    >
+                      <path d="M12 5v14M5 12h14" />
+                    </svg>
                   </span>
                 </button>
               </h3>
@@ -102,7 +114,7 @@ export default function Faq() {
                   aria-labelledby={buttonId}
                   className="motion-safe:transition-all"
                 >
-                  <p className="text-[15px] md:text-[18px] text-iron-600 leading-[1.7] px-3 md:px-8 pb-5 md:pb-8">
+                  <p className="px-4 pb-5 text-[15px] leading-[1.7] text-iron-600 md:px-9 md:pb-6 md:text-[18px]">
                     {item.a}
                   </p>
                 </div>

@@ -17,9 +17,12 @@ export default function Home() {
         <PainPoints />
         <Features />
         <Faq />
-        <FinalCta />
       </main>
-      <Footer />
+      {/* CTA + footer share one continuous dark gradient panel (Figma 1502:3627) */}
+      <div className="bg-gradient-to-b from-brand-ink to-[#040021]">
+        <FinalCta />
+        <Footer />
+      </div>
     </>
   );
 }

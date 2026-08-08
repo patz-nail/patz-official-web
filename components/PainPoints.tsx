@@ -1,5 +1,4 @@
 // Brief: briefs/02-problem-painpoints.md
-import PhoneMockup from "@/components/PhoneMockup";
 import {
   ELLIPSE_PAINPOINTS,
   LOGO_PAINPOINTS_LARGE,
@@ -78,7 +77,7 @@ export default function PainPoints() {
           src={ELLIPSE_PAINPOINTS}
           alt=""
           aria-hidden="true"
-          className="hidden md:absolute md:left-[846px] md:top-[338px] md:block md:size-[560px] md:opacity-90"
+          className="hidden md:absolute md:left-[846px] md:top-[338px] md:block md:size-[560px]"
         />
 
         {/* Right callout labels with pink pill highlights */}
@@ -94,18 +93,18 @@ export default function PainPoints() {
             aria-hidden="true"
           />
 
-          <p className="relative whitespace-nowrap text-center text-[18px] font-medium leading-[28px] tracking-[-0.5px] md:text-[32px] md:leading-[70px] md:tracking-[-1px]">
+          <p className="relative whitespace-nowrap text-center text-[18px] font-medium leading-[28px] tracking-[-0.5px] md:text-[32px] md:leading-[70px]">
             <span className="text-brand-pink">디자인 탐색</span>
             <span className="text-iron-800">에 소요되는 시간</span>
           </p>
-          <p className="relative whitespace-nowrap text-center text-[18px] font-medium leading-[28px] tracking-[-0.5px] md:text-[32px] md:leading-[70px] md:tracking-[-1px]">
+          <p className="relative whitespace-nowrap text-center text-[18px] font-medium leading-[28px] tracking-[-0.5px] md:text-[32px] md:leading-[70px]">
             <span className="text-brand-pink">집 근처</span>{" "}
             <span className="text-iron-800">네일샵 탐색</span>
           </p>
         </div>
 
         {/* Solution headline block */}
-        <div className="relative left-0 top-0 flex w-full flex-col items-center gap-6 md:absolute md:left-[429px] md:top-[1219px] md:w-[582px] md:gap-[40px]">
+        <div className="relative left-0 top-0 flex w-full flex-col items-center gap-6 md:absolute md:left-[426px] md:top-[1219px] md:w-[552px] md:gap-[40px]">
           <h3 className="relative text-center font-bold tracking-[-3px] text-iron-800">
             {/* Soft highlight behind 파츠가 줄여드릴게요 */}
             <span
@@ -126,28 +125,33 @@ export default function PainPoints() {
         </div>
 
         {/* PATZ wordmark + decorative droplets */}
-        <div className="relative left-0 top-0 flex translate-x-0 flex-col items-center gap-6 md:absolute md:left-1/2 md:top-[1572px] md:-translate-x-1/2 md:gap-[40px]">
+        <div className="relative left-0 top-0 flex translate-x-0 flex-col items-center gap-6 md:absolute md:left-[702px] md:top-[1607px] md:-translate-x-1/2 md:gap-[40px]">
           {/* Large stylized PATZ wordmark with droplet glyphs (Figma asset) */}
           <img
             src={LOGO_PAINPOINTS_LARGE}
             alt="patz"
-            className="h-auto w-[60%] max-w-[400px] md:w-[582px] md:max-w-none"
+            className="aspect-[601/262] w-[60%] max-w-[400px] md:w-[582px] md:max-w-none"
           />
 
-          {/* iPhone mockups — back/larger centered + front/smaller tilted */}
+          {/* iPhone mockups — two pre-rotated (~13°) screen renders overlapping.
+              Gallery phone sits behind/upper-right; home phone in front/lower-left. */}
           <div
-            className="relative h-[420px] w-full max-w-[360px] overflow-visible md:h-[597px] md:w-[1000px] md:max-w-none"
+            className="relative h-[440px] w-full max-w-[360px] overflow-visible md:h-[600px] md:w-[1000px] md:max-w-none"
             aria-hidden="true"
           >
-            {/* Back / larger phone — centered */}
-            <PhoneMockup
-              screen={SCREEN_PAINPOINTS_BACK}
-              className="absolute left-1/2 top-0 w-[180px] -translate-x-1/2 md:top-[10px] md:w-[280px]"
+            {/* Gallery grid — behind, upper right */}
+            <img
+              src={SCREEN_PAINPOINTS_FRONT}
+              alt=""
+              aria-hidden="true"
+              className="absolute left-[52%] top-0 w-[46%] md:left-[500px] md:top-0 md:w-[440px]"
             />
-            {/* Front / smaller phone — tilted */}
-            <PhoneMockup
-              screen={SCREEN_PAINPOINTS_FRONT}
-              className="absolute left-[58%] top-[20px] w-[150px] rotate-[8deg] md:left-[525px] md:top-[20px] md:w-[245px]"
+            {/* Home screen — in front, lower left */}
+            <img
+              src={SCREEN_PAINPOINTS_BACK}
+              alt=""
+              aria-hidden="true"
+              className="absolute left-[2%] top-[10%] w-[54%] md:left-[150px] md:top-[55px] md:w-[520px]"
             />
           </div>
         </div>
