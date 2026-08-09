@@ -35,10 +35,8 @@ export const SCREEN_LOCATION = F("ad9188e439ef0c61f80e935b96eeab19f0127274.png")
 // Community screen reuses the onboarding base (e83714df...) with an overlay.
 export const SCREEN_COMMUNITY_OVERLAY = F("5bdb0ce623c74df6a4723b5e792bb01ca04cd30c.png");
 
-// PainPoints mockups — non-standard composites in Figma; we substitute their primary
-// screen image into the shared PhoneMockup frame for fidelity at lower complexity.
-export const SCREEN_PAINPOINTS_BACK = F("1f907c727f33d5604a8e47e591f8ed0012f8bfbe.png");
-export const SCREEN_PAINPOINTS_FRONT = F("3db85d9b10bab10c507879bb900bc40b83415219.png");
+// The PainPoints hero reuses the Features SCREEN_HOME + SCREEN_SEARCH screens inside
+// the shared PhoneMockup frame (rotated/overlapped), so no dedicated assets are needed.
 
 // Photo
 export const PHOTO_NAIL = F("836e3f387ed4d41d10aedcb09f35f8b201330805.png");

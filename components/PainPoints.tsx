@@ -3,9 +3,10 @@ import {
   ELLIPSE_PAINPOINTS,
   LOGO_PAINPOINTS_LARGE,
   PHOTO_NAIL,
-  SCREEN_PAINPOINTS_BACK,
-  SCREEN_PAINPOINTS_FRONT,
 } from "@/lib/figma-assets";
+
+// Single Figma export of the overlapping home + search mockup pair, served from public/.
+const HOME_SEARCH_MOCKUP = "/mockups/home_search_v1.png";
 
 type QuotePillProps = {
   children: React.ReactNode;
@@ -106,16 +107,16 @@ export default function PainPoints() {
         {/* Solution headline block */}
         <div className="relative left-0 top-0 flex w-full flex-col items-center gap-6 md:absolute md:left-[426px] md:top-[1219px] md:w-[552px] md:gap-[40px]">
           <h3 className="relative text-center font-bold tracking-[-3px] text-iron-800">
-            {/* Soft highlight behind 파츠가 줄여드릴게요 */}
-            <span
-              className="hidden md:absolute md:left-[62px] md:top-[78px] md:block md:h-[73px] md:w-[428px] md:bg-[rgba(93,95,118,0.2)]"
-              aria-hidden="true"
-            />
             <span className="relative block text-[26px] leading-[36px] md:text-[44px] md:leading-[80px]">
               네일 고민하는 시간,
             </span>
-            <span className="relative block text-[32px] leading-[40px] text-brand-ink md:text-[56px] md:leading-[80px]">
-              파츠가 줄여드릴게요
+            {/* Soft highlight tracks the real text box so it stays aligned regardless of font metrics */}
+            <span className="relative inline-block text-[32px] leading-[40px] text-brand-ink md:text-[56px] md:leading-[80px]">
+              <span
+                aria-hidden="true"
+                className="hidden md:absolute md:inset-x-[-8px] md:top-[16px] md:bottom-[6px] md:block md:bg-[rgba(93,95,118,0.2)]"
+              />
+              <span className="relative">파츠가 줄여드릴게요</span>
             </span>
           </h3>
           <p className="w-full whitespace-normal break-keep text-center text-[14px] font-extralight leading-[22px] tracking-[-0.2px] text-iron-800 md:whitespace-pre-wrap md:text-[24px] md:leading-[36px] md:tracking-[-0.24px]">
@@ -133,27 +134,14 @@ export default function PainPoints() {
             className="aspect-[601/262] w-[60%] max-w-[400px] md:w-[582px] md:max-w-none"
           />
 
-          {/* iPhone mockups — two pre-rotated (~13°) screen renders overlapping.
-              Gallery phone sits behind/upper-right; home phone in front/lower-left. */}
-          <div
-            className="relative h-[440px] w-full max-w-[360px] overflow-visible md:h-[600px] md:w-[1000px] md:max-w-none"
+          {/* iPhone mockups — single Figma export of the overlapping home + search
+              pair (device frames, tilt, and drop shadow baked in). */}
+          <img
+            src={HOME_SEARCH_MOCKUP}
+            alt=""
             aria-hidden="true"
-          >
-            {/* Gallery grid — behind, upper right */}
-            <img
-              src={SCREEN_PAINPOINTS_FRONT}
-              alt=""
-              aria-hidden="true"
-              className="absolute left-[52%] top-0 w-[46%] md:left-[500px] md:top-0 md:w-[440px]"
-            />
-            {/* Home screen — in front, lower left */}
-            <img
-              src={SCREEN_PAINPOINTS_BACK}
-              alt=""
-              aria-hidden="true"
-              className="absolute left-[2%] top-[10%] w-[54%] md:left-[150px] md:top-[55px] md:w-[520px]"
-            />
-          </div>
+            className="w-full max-w-[520px] md:w-[1000px] md:max-w-none"
+          />
         </div>
       </div>
     </section>

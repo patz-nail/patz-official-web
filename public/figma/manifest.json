@@ -97,29 +97,6 @@
     ],
     "note": "Two screen layers stacked (IMG_8919 base + overlay), then phone chrome, then camera."
   },
-  "1481:3464": {
-    "label": "PainPoints big iPhone (back, larger)",
-    "assets": [
-      "1f907c727f33d5604a8e47e591f8ed0012f8bfbe.png",
-      "9dae48f068408893f9bd0644bcfc761ea1e230fb.png",
-      "bd1282673e8d54e7c624a93b3b52e3c4293fb362.png",
-      "80a14c9f52232ff860d2014c687d3e473bb452ba.png",
-      "e76620dc3cde82c9c7d12b8c797f522ac8f72d80.svg"
-    ],
-    "note": "Non-standard composite: order is screen content (IMG_8919 mask source img1, mask shape img), chrome color layer (change color here), display-frame, then 'fix' SVG mask. Camera dot is part of display-frame here."
-  },
-  "1481:3455": {
-    "label": "PainPoints small iPhone (front, tilted)",
-    "assets": [
-      "3db85d9b10bab10c507879bb900bc40b83415219.png",
-      "02c6f39cc6d5249bd16f65f2da87c435bde20659.png",
-      "4d935aab6cf75f4c23f53ab8ed2f29fba2919240.png",
-      "10be8110865394191da0a1a0acbe7fb243194e56.png",
-      "366635521eb39eb439af0123c527c74025782dfb.svg",
-      "0bb05fba2cadf43dfdcbeb6a9618d9b18049fe1d.svg"
-    ],
-    "note": "Non-standard tilted composite: order is screen content (img1), screen mask shape (img), chrome color layer, display-frame, then two 'fix' SVG masks (366... is outer rotated phone silhouette, 0bb... is inner)."
-  },
   "1481:3271": {
     "label": "Nail photo (PainPoints left column)",
     "assets": ["836e3f387ed4d41d10aedcb09f35f8b201330805.png"]
