@@ -1,0 +1,5 @@
+{
+  // Figma pixel-perfect sections (e.g. PainPoints) intentionally use arbitrary-value
+  // classes like `w-[300px]`. Silence Tailwind's "use the canonical class" suggestions.
+  "tailwindCSS.lint.suggestCanonicalClasses": "ignore"
+}
