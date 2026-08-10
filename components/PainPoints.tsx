@@ -6,7 +6,8 @@ import {
 } from "@/lib/figma-assets";
 
 // Single Figma export of the overlapping home + search mockup pair, served from public/.
-const HOME_SEARCH_MOCKUP = "/mockups/home_search_v1.png";
+// 4K export — same aspect as the display box, just higher resolution.
+const HOME_SEARCH_MOCKUP = "/mockups/home_search_v2.png";
 
 type QuotePillProps = {
   children: React.ReactNode;
