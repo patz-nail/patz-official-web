@@ -4,6 +4,7 @@ import {
   LOGO_PAINPOINTS_LARGE,
   PHOTO_NAIL,
 } from "@/lib/figma-assets";
+import ScaleToFitCanvas from "@/components/ScaleToFitCanvas";
 
 // Single Figma export of the overlapping home + search mockup pair, served from public/.
 // 4K export — same aspect as the display box, just higher resolution.
@@ -30,9 +31,10 @@ export default function PainPoints() {
   return (
     <section
       id="painpoints"
-      className="relative w-full bg-gradient-to-b from-[#f4f4f4] via-[#f4f4f4] via-50% to-[#ecc5d2]"
+      className="relative w-full bg-gradient-to-b from-[#f4f4f4] via-[#f4f4f4] via-50% to-[#ecc5d2] md:overflow-hidden"
       aria-labelledby="painpoints-heading"
     >
+      <ScaleToFitCanvas designHeight={2488}>
       <div className="relative mx-auto flex w-full flex-col gap-12 px-6 py-12 md:block md:h-[2488px] md:w-[1440px] md:gap-0 md:px-0 md:py-0">
         {/* Blush headline strip — full bleed across canvas */}
         <div
@@ -145,6 +147,7 @@ export default function PainPoints() {
           />
         </div>
       </div>
+      </ScaleToFitCanvas>
     </section>
   );
 }

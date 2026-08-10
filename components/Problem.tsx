@@ -1,4 +1,5 @@
 // Brief: briefs/02-problem-painpoints.md
+import ScaleToFitCanvas from "@/components/ScaleToFitCanvas";
 
 type StepPillProps = {
   children: React.ReactNode;
@@ -24,9 +25,10 @@ export default function Problem() {
   return (
     <section
       id="problem"
-      className="relative w-full bg-[#f4f4f4]"
+      className="relative w-full bg-[#f4f4f4] md:overflow-hidden"
       aria-labelledby="problem-heading"
     >
+      <ScaleToFitCanvas designHeight={783}>
       <div className="relative mx-auto w-full px-6 py-12 md:h-[783px] md:w-[1440px] md:px-0 md:py-0">
         {/* Headline strip — blush block from left edge */}
         <div
@@ -114,6 +116,7 @@ export default function Problem() {
           </li>
         </ol>
       </div>
+      </ScaleToFitCanvas>
     </section>
   );
 }
