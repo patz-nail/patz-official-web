@@ -1,4 +1,4 @@
-// Figma asset paths (downloaded via Figma desktop MCP into public/figma/).
+// Figma asset paths (downloaded via Figma desktop MCP into public/figma/).ㅇ
 // Filenames are content hashes — that way assets shared across nodes naturally dedup.
 // Source manifest: public/figma/manifest.json
 

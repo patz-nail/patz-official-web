@@ -218,7 +218,7 @@ export default function Features() {
     <section
       id="service"
       aria-labelledby="service-heading"
-      className="bg-white max-w-[1440px] mx-auto py-[64px] md:py-[120px] px-5 md:px-0"
+      className="bg-white w-full py-[64px] md:py-[120px] px-5 md:px-0"
     >
       <h2 id="service-heading" className="sr-only">
         주요 기능
