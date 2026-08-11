@@ -2,11 +2,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  ICON_APPLE,
-  LOGO_NAV_DROPLET,
-  LOGO_NAV_WORDMARK,
-} from "@/lib/figma-assets";
+import { ICON_APPLE, LOGO_NAV_WORDMARK } from "@/lib/figma-assets";
+import { LOGO_NAV_MARK } from "@/lib/constants";
 import { APP_STORE_URL } from "@/lib/constants";
 
 const NAV_LINKS: { label: string; href: string }[] = [
@@ -31,17 +28,17 @@ export default function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 h-14 md:h-16 w-full border-b border-white/10 bg-brand-ink/70 backdrop-blur-md supports-[backdrop-filter]:bg-brand-ink/60">
       <div className="mx-auto flex h-14 md:h-16 w-full max-w-[1440px] items-center justify-between px-5 md:px-[120px]">
-        {/* Logo (Figma assets: droplet glyph + wordmark — wordmark is #F1E9E9, reads on dark) */}
+        {/* Logo (droplet mark: /4x/Vector.svg, 55×44 → keep 1.25 ratio; wordmark #F1E9E9, reads on dark) */}
         <a
           href="#hero"
           className="flex items-center gap-[4px]"
           aria-label="patz home"
         >
           <img
-            src={LOGO_NAV_DROPLET}
+            src={LOGO_NAV_MARK}
             alt=""
             aria-hidden="true"
-            className="h-6 w-[29px] md:h-[30px] md:w-[36px]"
+            className="h-6 w-[30px] md:h-[30px] md:w-[38px]"
           />
           <img
             src={LOGO_NAV_WORDMARK}
