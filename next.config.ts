@@ -29,6 +29,14 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  async rewrites() {
+    return [
+      {
+        source: "/nail-mbti/:path*",
+        destination: "https://patz-nail-mbti.vercel.app/:path*",
+      },
+    ];
+  },
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
